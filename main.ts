@@ -1,5 +1,16 @@
-scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
-	
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (sprite, location) {
+    game.showLongText("ΣΑ    2/3", DialogLayout.Bottom)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (true) {
+    	
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
+    game.showLongText("ΣΟΥ   1/3", DialogLayout.Bottom)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
+    game.showLongText("ΜΙ   3/3", DialogLayout.Bottom)
 })
 let seconds = 300
 scene.setBackgroundColor(7)
@@ -22,4 +33,6 @@ let mySprite = sprites.create(img`
     . . . f f f f f f . . . . 
     . . . . f f f . . . . . . 
     `, SpriteKind.Player)
+tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)

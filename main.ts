@@ -1,10 +1,8 @@
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (sprite, location) {
     game.showLongText("ΣΑ    2/3", DialogLayout.Bottom)
 })
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (true) {
-    	
-    }
+info.onCountdownEnd(function () {
+    game.reset()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
     game.showLongText("ΣΟΥ   1/3", DialogLayout.Bottom)
@@ -12,7 +10,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (s
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
     game.showLongText("ΜΙ   3/3", DialogLayout.Bottom)
 })
-let seconds = 300
+info.startCountdown(300)
 scene.setBackgroundColor(7)
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(img`

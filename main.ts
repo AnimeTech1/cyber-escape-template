@@ -1,13 +1,16 @@
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (sprite, location) {
+    music.baDing.play()
     game.showLongText("ΣΑ    2/3", DialogLayout.Bottom)
 })
 info.onCountdownEnd(function () {
-    game.reset()
+    game.over(false)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
+    music.baDing.play()
     game.showLongText("ΣΟΥ   1/3", DialogLayout.Bottom)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
+    music.baDing.play()
     game.showLongText("ΜΙ   3/3", DialogLayout.Bottom)
 })
 info.startCountdown(300)
@@ -34,3 +37,4 @@ let mySprite = sprites.create(img`
 tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
+music.playMelody("E B C5 A B G A F ", 120)
